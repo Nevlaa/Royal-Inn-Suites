@@ -1,0 +1,93 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="X06Reservation.Site" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Royal Inn Suites</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="/Scripts/jquery-3.3.1.min.js"></script>
+        <script src="/Scripts/bootstrap.min.js"></script>
+        <%--<link href="Content/bootstrap.min.css" rel="stylesheet" />--%>
+        <link href="/Content/bootstrap.min.css" rel="stylesheet" />
+        <link href="/Content/site.css" rel="stylesheet" />
+    </asp:ContentPlaceHolder>
+    <style>
+        .jumbotron{
+            background-color: rebeccapurple !important;
+        }
+        .jumbotron img{
+            background-color: #EEE;
+        }
+        .navbar {
+            border:1px rebeccapurple solid !important; 
+        }
+        .navbar-default .navbar-brand{
+            color: rebeccapurple !important;
+        }
+        .navbar-brand li:hover {
+            color: #EEEEEE !important;
+        }
+        .navbar-nav li:hover{
+            background-color: #EEEEEE !important;
+        }
+        .navbar-nav a:hover{
+            color: rebeccapurple !important;
+        }
+        a{
+            color: black !important;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server" class="form-horizontal">
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid menu">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" 
+                            data-toggle="collapse" data-target="#mainMenu">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="Default">Home&nbsp;<span class="glyphicon glyphicon-home"></span></a>
+                </div>
+                <div class="collapse navbar-collapse" id="mainMenu">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/Rooms">Rooms&nbsp;<span class="glyphicon glyphicon-bed"></span></a></li>
+                        <li><a href="/Request">Reservations&nbsp;<span class="glyphicon glyphicon-calendar"></span></a></li>
+                        <li><a href="/ContactUs">Contact Us&nbsp;<span class="glyphicon glyphicon-phone"></span></a></li>
+                        <li runat="server" class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                About Us&nbsp;<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/AboutUs/History">History</a></li>
+                                <li><a href="/AboutUs/Directions">Directions</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <header class="jumbotron">
+            <img src="/Images/logo.png" alt="Royal Inns and Suites" class="img-responsive" />
+        </header>
+
+        <main>
+            <asp:ContentPlaceHolder ID="mainPlaceHolder" runat="server">
+            </asp:ContentPlaceHolder>
+        </main>        
+
+        <footer>
+            <p class="text-right">&copy; <asp:Label ID="lblYear" runat="server"></asp:Label> 
+                <span class="text-capitalize">royal inns and suites</span></p>
+        </footer>
+    </div>
+    </form>
+</body>
+</html>
+
